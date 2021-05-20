@@ -15,10 +15,10 @@ pipeline {
                 sh "npm test"
             }
         }
-        stage('sonar scan'){
+ /*       stage('sonar scan'){
             steps {
                  withSonarQubeEnv('TestverSonarQube') {
-                sh 'mvn clean package sonar:sonar'
+                sh 'npm clean package sonar:sonar'
               }
             }
         }
@@ -29,5 +29,6 @@ pipeline {
               }
             }
         }
+*/
     }
 }
