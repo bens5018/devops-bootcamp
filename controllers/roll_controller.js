@@ -10,10 +10,12 @@ router.get('/', async (req, res) => {
   let message = `A die with ${die.sides} sides just rolled a ${roll}.`;
   await saveRoll(die.sides, roll);
 
-  if (isEnabled('rollTwo_wsu0000')) {
+  if (isEnabled('notdj-1')) {
     let die2 = new Die(req.query.sides);
     let roll2 = die2.roll();
-    message = `Two dice each with ${die.sides} sides just rolled a ${roll} and ${roll2}.`;
+    let die3 = new Die(req.query.sides);
+    let roll3 = die3.roll();
+    message = `Two dice each with ${die.sides} sides just rolled a ${roll} and ${roll2} and ${roll3}.`;
     await saveRoll(die2.sides, roll2);
   }
 
